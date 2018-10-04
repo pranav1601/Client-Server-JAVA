@@ -56,7 +56,7 @@ public void actionPerformed(ActionEvent ae)
 {
 
  {
- JOptionPane.showMessageDialog (opt,"ChitChat Broadcast Messenger\nCopyright Fatima Ahmed  2004","About ChitChat Broadcast Messenger",JOptionPane.INFORMATION_MESSAGE);
+ JOptionPane.showMessageDialog (opt,"FarmAssist\nCopyright","About FarmAssist",JOptionPane.INFORMATION_MESSAGE);
  }
 }
 }
@@ -134,7 +134,7 @@ Font f=new Font("SansSerif",Font.PLAIN,16);
 
 public static void main (String args[]) throws IOException {
 
-Server ServerWindow = new Server("ChitChat Broadcast Messenger: Server Window");
+Server ServerWindow = new Server("FarmAssist: Server Window");
 Toolkit theKit = ServerWindow.getToolkit();
 Dimension wndSize = theKit.getScreenSize();
 
