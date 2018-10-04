@@ -11,7 +11,7 @@ import java.lang.*;
 public class FrameWork extends JFrame implements ActionListener
 {
 Client chatObj;
-String logins="My nick";
+String logins="Farmer1";
 String chat;
 public FrameWork(String title)
 {
