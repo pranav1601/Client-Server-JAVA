@@ -16,7 +16,7 @@ output = new TextArea (15,40);
 output.setEditable (false);
 output.setFont(f);
 output.setForeground(Color.blue);
-this.yourname="Fatima";
+this.yourname="Farmer";
 
 setTitle(title);
 setJMenuBar(menuBar);
