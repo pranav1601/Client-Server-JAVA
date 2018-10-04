@@ -156,7 +156,7 @@ public Insets getInsets()
   public void actionPerformed (ActionEvent event) {
     try {
       input.selectAll ();
-      dataOut.writeUTF (yourname+" says:\n "+event.getActionCommand ());
+      dataOut.writeUTF (yourname+" :\n "+event.getActionCommand ());
       dataOut.flush ();
     } catch (IOException ex) {
       handleIOException (ex);

@@ -11,7 +11,7 @@ import java.lang.*;
 public class FrameWork extends JFrame implements ActionListener
 {
 Client chatObj;
-String logins="My nick";
+String logins="Farmer1";
 String chat;
 public FrameWork(String title)
 {
@@ -90,7 +90,7 @@ if(name.equals(newAction.getValue(NAME)))
 	{
 
 	 FrameWork window2;
-	 window2 = new FrameWork("ChitChat Broadcast Messenger");
+	 window2 = new FrameWork("FarmAssist");
 	 Toolkit theKit = window2.getToolkit();
 	 Dimension wndSize = theKit.getScreenSize();
 
@@ -133,7 +133,7 @@ public void actionPerformed(ActionEvent e)
 {
 if(e.getSource() == aboutItem)
 {
-JOptionPane.showMessageDialog (this,"ChitChat Broadcast Messenger\nCopyright Fatima Ahmed 2004","About ChitChat Broadcast Messenger",JOptionPane.INFORMATION_MESSAGE);
+JOptionPane.showMessageDialog (this,"FarmAssist\n","About FarmAssist",JOptionPane.INFORMATION_MESSAGE);
 }
 }
 

@@ -16,16 +16,14 @@ output = new TextArea (15,40);
 output.setEditable (false);
 output.setFont(f);
 output.setForeground(Color.blue);
-this.yourname="Fatima";
+this.yourname="Farmer";
 
 setTitle(title);
 setJMenuBar(menuBar);
 JMenu fileMenu = new JMenu("File");
-JMenu colorMenu = new JMenu("Color");
 JMenu helpMenu = new JMenu("Help");
 
 fileMenu.setMnemonic('F');
-colorMenu.setMnemonic('C');
 helpMenu.setMnemonic('H');
 
 addMenuItem(fileMenu,exitAction = new FileAction("Exit"));
@@ -56,7 +54,7 @@ public void actionPerformed(ActionEvent ae)
 {
 
  {
- JOptionPane.showMessageDialog (opt,"ChitChat Broadcast Messenger\nCopyright Fatima Ahmed  2004","About ChitChat Broadcast Messenger",JOptionPane.INFORMATION_MESSAGE);
+ JOptionPane.showMessageDialog (opt,"FarmAssist\n","About FarmAssist",JOptionPane.INFORMATION_MESSAGE);
  }
 }
 }
@@ -134,7 +132,7 @@ Font f=new Font("SansSerif",Font.PLAIN,16);
 
 public static void main (String args[]) throws IOException {
 
-Server ServerWindow = new Server("ChitChat Broadcast Messenger: Server Window");
+Server ServerWindow = new Server("FarmAssist: Server Window");
 Toolkit theKit = ServerWindow.getToolkit();
 Dimension wndSize = theKit.getScreenSize();
 

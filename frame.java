@@ -10,7 +10,7 @@ static FrameWork window;
 public static void main(String[] args)throws IOException
 {
 
-window = new FrameWork("ChitChat Broadcast Messenger");
+window = new FrameWork("FarmAssist");
 Toolkit theKit = window.getToolkit();
 Dimension wndSize = theKit.getScreenSize();
 

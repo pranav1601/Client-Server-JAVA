@@ -6,9 +6,9 @@
 
 3. Compile the Server's frame program using the command '>javac frame.java'
 
-4. Run the server code using the command '>java Server <port number>'
+4. Run the server code using the command '>java Server portnumber'
 
-5. Run the Server's frame program using the command '>java frame <hostname>:<port number>'
+5. Run the Server's frame program using the command '>java frame hostname:portnumber'
 
 
 Portnumber is any random integer.
