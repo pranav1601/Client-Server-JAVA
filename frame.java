@@ -140,6 +140,9 @@ if ((args.length != 1) || (args[0].indexOf (':') < 0))
  sObj.fun(host,port,window);
 
 
+///clear
+}
+void useLess(){
 
 }
 void  fun(String host,int port,FrameWork window) throws IOException
