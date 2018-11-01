@@ -256,6 +256,7 @@ public Insets getInsets()
     try {
       while (!Thread.interrupted ()) {
         String line = dataIn.readUTF ();
+        //String line1[] = line.split(":");
         
 
         if(line.equals("tiger")){
