@@ -21,11 +21,9 @@ setTitle(title);
 setJMenuBar(menuBar);
 
 JMenu fileMenu = new JMenu("File");
-JMenu colorMenu = new JMenu("Color");
 JMenu helpMenu = new JMenu("Help");
 
 fileMenu.setMnemonic('F');
-colorMenu.setMnemonic('C');
 helpMenu.setMnemonic('H');
 
 newAction = new FileAction("New", KeyStroke.getKeyStroke('N',Event.CTRL_MASK));
@@ -133,7 +131,7 @@ public void actionPerformed(ActionEvent e)
 {
 if(e.getSource() == aboutItem)
 {
-JOptionPane.showMessageDialog (this,"FarmAssist\n","About FarmAssist",JOptionPane.INFORMATION_MESSAGE);
+JOptionPane.showMessageDialog (this,"FarmAssist\nCopyright","About FarmAssist",JOptionPane.INFORMATION_MESSAGE);
 }
 }
 

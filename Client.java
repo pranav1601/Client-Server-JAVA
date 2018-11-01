@@ -10,6 +10,21 @@ import javax.swing.event.*;
 public class Client implements Runnable, WindowListener, ActionListener{
   protected String host;
   protected int port;
+  public JPanel opanel;
+  public JButton tiger;
+  public JButton elephant;
+  public JButton flood;
+  public JButton rodent;
+  public JButton corn;
+  public JButton fire;
+  public JButton cattle;
+  public JLabel imgtiger;
+  public JLabel imgele;
+  public JLabel imgflood;
+  public JLabel imgrodent;
+  public JLabel imgcorn;
+  public JLabel imgfire;
+  public JLabel imgcattle;
 
   public TextArea output;
   protected TextField input;
@@ -57,6 +72,138 @@ public Client()
     constraints.insets =new Insets(10,10,10,10);
     window.getContentPane().add (output,BorderLayout.CENTER);
     window.getContentPane().add (input,BorderLayout.SOUTH);
+    opanel=new JPanel();
+    opanel.setBackground(Color.ORANGE);
+    opanel.setLayout(new GridLayout(10,2));
+    window.getContentPane().add(opanel,BorderLayout.CENTER); 
+    opanel.add(new JLabel(yourname));
+
+
+
+    imgtiger=new JLabel(new ImageIcon("tiger.jpg"));
+    opanel.add(imgtiger);
+    tiger=new JButton("tiger");
+    tiger.setIcon(new ImageIcon(this.getClass().getResource("tiger.jpg")));
+    opanel.add(tiger);
+    imgtiger.setVisible(false);
+    tiger.addActionListener(new ActionListener(){
+      @Override
+      public void actionPerformed(ActionEvent e){
+        
+       Activator("tiger");
+
+      }
+
+    });
+
+
+    imgele=new JLabel(new ImageIcon("elephant.jpg"));
+    opanel.add(imgele);
+    elephant=new JButton("elephant");
+    elephant.setIcon(new ImageIcon(this.getClass().getResource("elephant.jpg")));
+    opanel.add(elephant);
+    imgele.setVisible(false);
+    elephant.addActionListener(new ActionListener(){
+      @Override
+      public void actionPerformed(ActionEvent e){
+        
+       Activator("elephant");
+
+      }
+
+    });
+
+
+
+    imgflood=new JLabel(new ImageIcon("flood.jpg"));
+    opanel.add(imgflood);
+    flood=new JButton("flood");
+    flood.setIcon(new ImageIcon(this.getClass().getResource("flood.jpg")));
+    opanel.add(flood);
+    imgflood.setVisible(false);
+    flood.addActionListener(new ActionListener(){
+      @Override
+      public void actionPerformed(ActionEvent e){
+        
+       Activator("flood");
+
+      }
+
+    });
+
+
+    imgrodent=new JLabel(new ImageIcon("rodent.jpg"));
+    opanel.add(imgrodent);
+    rodent=new JButton("rodent");
+    rodent.setIcon(new ImageIcon(this.getClass().getResource("rodent.jpg")));
+    opanel.add(rodent);
+    imgrodent.setVisible(false);
+    rodent.addActionListener(new ActionListener(){
+      @Override
+      public void actionPerformed(ActionEvent e){
+        
+       Activator("rodent");
+
+      }
+
+    });
+
+
+
+    imgcorn=new JLabel(new ImageIcon("corn.jpg"));
+    opanel.add(imgcorn);
+    corn=new JButton("corn");
+    corn.setIcon(new ImageIcon(this.getClass().getResource("corn.jpg")));
+    opanel.add(corn);
+    imgcorn.setVisible(false);
+    corn.addActionListener(new ActionListener(){
+      @Override
+      public void actionPerformed(ActionEvent e){
+        
+       Activator("corn");
+
+      }
+
+    });
+
+
+    imgfire=new JLabel(new ImageIcon("fire.jpg"));
+    opanel.add(imgfire);
+    fire=new JButton("fire");
+    fire.setIcon(new ImageIcon(this.getClass().getResource("fire.jpg")));
+    opanel.add(fire);
+    imgfire.setVisible(false);
+    fire.addActionListener(new ActionListener(){
+      @Override
+      public void actionPerformed(ActionEvent e){
+        
+       Activator("fire");
+
+      }
+
+    });
+
+
+    imgcattle=new JLabel(new ImageIcon("cattle.jpg"));
+    opanel.add(imgcattle);
+    cattle=new JButton("cattle");
+    cattle.setIcon(new ImageIcon(this.getClass().getResource("cattle.jpg")));
+    opanel.add(cattle);
+    imgcattle.setVisible(false);
+    cattle.addActionListener(new ActionListener(){
+      @Override
+      public void actionPerformed(ActionEvent e){
+        
+       Activator("cattle");
+
+      }
+
+    });
+
+
+
+
+
 
 
 window.pack();
@@ -111,6 +258,80 @@ public Insets getInsets()
         String line = dataIn.readUTF ();
         
 
+        if(line.equals("tiger")){
+          imgtiger.setVisible(true);
+          imgele.setVisible(false);
+          imgflood.setVisible(false);
+          imgrodent.setVisible(false);
+          imgcorn.setVisible(false);
+          imgfire.setVisible(false);
+          imgcattle.setVisible(true);
+
+        }
+        else if (line.equals("elephant")) {
+          imgtiger.setVisible(false);
+          imgele.setVisible(true);
+          imgflood.setVisible(false);
+          imgrodent.setVisible(false);
+          imgcorn.setVisible(true);
+          imgfire.setVisible(false);
+          imgcattle.setVisible(false);
+          
+        }
+        else if (line.equals("flood")) {
+          imgtiger.setVisible(false);
+          imgele.setVisible(false);
+          imgflood.setVisible(true);
+          imgrodent.setVisible(false);
+          imgcorn.setVisible(false);
+          imgfire.setVisible(false);
+          imgcattle.setVisible(false);
+          
+        }
+        else if (line.equals("rodent")) {
+          imgtiger.setVisible(false);
+          imgele.setVisible(false);
+          imgflood.setVisible(false);
+          imgrodent.setVisible(true);
+          imgcorn.setVisible(true);
+          imgfire.setVisible(false);
+          imgcattle.setVisible(false);
+          
+        }
+        else if (line.equals("corn")) {
+          imgtiger.setVisible(false);
+          imgele.setVisible(false);
+          imgflood.setVisible(false);
+          imgrodent.setVisible(false);
+          imgcorn.setVisible(true);
+          imgfire.setVisible(false);
+          imgcattle.setVisible(false);
+          
+        }
+        else if (line.equals("fire")) {
+          imgtiger.setVisible(false);
+          imgele.setVisible(false);
+          imgflood.setVisible(false);
+          imgrodent.setVisible(false);
+          imgcorn.setVisible(false);
+          imgfire.setVisible(true);
+          imgcattle.setVisible(false);
+          
+        }
+
+        else if (line.equals("cattle")) {
+          imgtiger.setVisible(false);
+          imgele.setVisible(false);
+          imgflood.setVisible(false);
+          imgrodent.setVisible(false);
+          imgcorn.setVisible(true);
+          imgfire.setVisible(false);
+          imgcattle.setVisible(true);
+        }
+
+
+        
+
        output.append (line + "\n");
       }
     } catch (IOException ex) {
@@ -161,6 +382,17 @@ public Insets getInsets()
     } catch (IOException ex) {
       handleIOException (ex);
     }
+  }
+  public void Activator(String msg){
+    try {
+      input.selectAll ();
+      dataOut.writeUTF (msg);
+      dataOut.flush ();
+    } catch (IOException ex) {
+      handleIOException (ex);
+    }
+
+
   }
 }
 

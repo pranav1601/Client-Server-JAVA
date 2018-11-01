@@ -21,9 +21,11 @@ this.yourname="Farmer";
 setTitle(title);
 setJMenuBar(menuBar);
 JMenu fileMenu = new JMenu("File");
+JMenu colorMenu = new JMenu("Color");
 JMenu helpMenu = new JMenu("Help");
 
 fileMenu.setMnemonic('F');
+colorMenu.setMnemonic('C');
 helpMenu.setMnemonic('H');
 
 addMenuItem(fileMenu,exitAction = new FileAction("Exit"));
@@ -54,7 +56,7 @@ public void actionPerformed(ActionEvent ae)
 {
 
  {
- JOptionPane.showMessageDialog (opt,"FarmAssist\n","About FarmAssist",JOptionPane.INFORMATION_MESSAGE);
+ JOptionPane.showMessageDialog (opt,"FarmAssist\nCopyright","About FarmAssist",JOptionPane.INFORMATION_MESSAGE);
  }
 }
 }
