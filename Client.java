@@ -11,6 +11,7 @@ public class Client implements Runnable, WindowListener, ActionListener{
   protected String host;
   protected int port;
   public JPanel opanel;
+  public JPanel kpanel;
   public JButton tiger;
   public JButton elephant;
   public JButton flood;
@@ -25,6 +26,8 @@ public class Client implements Runnable, WindowListener, ActionListener{
   public JLabel imgcorn;
   public JLabel imgfire;
   public JLabel imgcattle;
+  public JLabel user;
+  public JScrollPane scrollPane;
 
   public TextArea output;
   protected TextField input;
@@ -75,17 +78,25 @@ public Client()
     opanel=new JPanel();
     opanel.setBackground(Color.ORANGE);
     opanel.setLayout(new GridLayout(10,2));
-    window.getContentPane().add(opanel,BorderLayout.CENTER); 
+    window.getContentPane().add(opanel); 
     opanel.add(new JLabel(yourname));
+    kpanel.setBackground(Color.BLACK);
+    kpanel.setLayout(new GridLayout(5,1));
+    window.getContentPane().add(kpanel); 
+    pack();
+    setVisible(true);
 
-
-
+    /*JLabel user=new JLabel(yourname+" :\n ");
+    user.setFont(new Font("Verdana",1,20));
+    opanel.add(user);
+    user.setVisible(true);
+    */
     imgtiger=new JLabel(new ImageIcon("tiger.jpg"));
-    opanel.add(imgtiger);
+    kpanel.add(imgtiger);
     tiger=new JButton("tiger");
     tiger.setIcon(new ImageIcon(this.getClass().getResource("tiger.jpg")));
     opanel.add(tiger);
-    imgtiger.setVisible(false);
+    imgtiger.setVisible(true);
     tiger.addActionListener(new ActionListener(){
       @Override
       public void actionPerformed(ActionEvent e){
@@ -200,7 +211,15 @@ public Client()
 
     });
 
+    /*JLabel user=new JLabel(yourname+" :\n ");
+    user.setFont(new Font("Verdana",1,20));
+    opanel.add(user);
+    user.setVisible(false);
+    
 
+    JScrollPane scrollPane = new JScrollPane(opanel,   ScrollPaneConstants.VERTICAL_SCROLLBAR_AS_NEEDED, ScrollPaneConstants.HORIZONTAL_SCROLLBAR_AS_NEEDED);
+    scrollPane.setPreferredSize(new Dimension(600, 600));
+    */
 
 
 
@@ -260,6 +279,9 @@ public Insets getInsets()
         
 
         if(line.equals("tiger")){
+          opanel.add(imgtiger);
+          imgtiger.setVisible(false);
+          //user.setVisible(false);
           imgtiger.setVisible(true);
           imgele.setVisible(false);
           imgflood.setVisible(false);
@@ -267,9 +289,12 @@ public Insets getInsets()
           imgcorn.setVisible(false);
           imgfire.setVisible(false);
           imgcattle.setVisible(true);
+          //user.setVisible(true);
+
 
         }
         else if (line.equals("elephant")) {
+          //user.setVisible(false);
           imgtiger.setVisible(false);
           imgele.setVisible(true);
           imgflood.setVisible(false);
@@ -277,9 +302,10 @@ public Insets getInsets()
           imgcorn.setVisible(true);
           imgfire.setVisible(false);
           imgcattle.setVisible(false);
-          
+          //user.setVisible(true);
         }
         else if (line.equals("flood")) {
+          //user.setVisible(false);
           imgtiger.setVisible(false);
           imgele.setVisible(false);
           imgflood.setVisible(true);
@@ -287,9 +313,10 @@ public Insets getInsets()
           imgcorn.setVisible(false);
           imgfire.setVisible(false);
           imgcattle.setVisible(false);
-          
+          //user.setVisible(true);
         }
         else if (line.equals("rodent")) {
+          user.setVisible(false);
           imgtiger.setVisible(false);
           imgele.setVisible(false);
           imgflood.setVisible(false);
@@ -297,9 +324,10 @@ public Insets getInsets()
           imgcorn.setVisible(true);
           imgfire.setVisible(false);
           imgcattle.setVisible(false);
-          
+          //user.setVisible(true);
         }
         else if (line.equals("corn")) {
+          user.setVisible(false);
           imgtiger.setVisible(false);
           imgele.setVisible(false);
           imgflood.setVisible(false);
@@ -307,9 +335,10 @@ public Insets getInsets()
           imgcorn.setVisible(true);
           imgfire.setVisible(false);
           imgcattle.setVisible(false);
-          
+          //user.setVisible(true);
         }
         else if (line.equals("fire")) {
+          user.setVisible(false);
           imgtiger.setVisible(false);
           imgele.setVisible(false);
           imgflood.setVisible(false);
@@ -317,10 +346,11 @@ public Insets getInsets()
           imgcorn.setVisible(false);
           imgfire.setVisible(true);
           imgcattle.setVisible(false);
-          
+          //user.setVisible(true);
         }
 
         else if (line.equals("cattle")) {
+          user.setVisible(false);
           imgtiger.setVisible(false);
           imgele.setVisible(false);
           imgflood.setVisible(false);
@@ -328,7 +358,9 @@ public Insets getInsets()
           imgcorn.setVisible(true);
           imgfire.setVisible(false);
           imgcattle.setVisible(true);
+          //user.setVisible(true);
         }
+
 
 
         
@@ -378,6 +410,8 @@ public Insets getInsets()
   public void actionPerformed (ActionEvent event) {
     try {
       input.selectAll ();
+      
+
       dataOut.writeUTF (yourname+" :\n "+event.getActionCommand ());
       dataOut.flush ();
     } catch (IOException ex) {
